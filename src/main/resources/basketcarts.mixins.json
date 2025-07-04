@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.apollointhehouse.basketcarts.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "EntityMinecartAccessor",
+    "EntityMinecartMixin",
+    "TileEntityBasketMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

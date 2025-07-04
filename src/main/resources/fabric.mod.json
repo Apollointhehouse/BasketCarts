@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "basketcarts",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Basket Carts",
+  "description": "Put baskets in minecarts.",
   "authors": [
-    "Turnip Labs"
+    "Apollointhehouse"
   ],
   "contact": {
     "homepage": "",
@@ -20,30 +20,30 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "turniplabs.examplemod.ExampleMod"
+        "value": "me.apollointhehouse.basketcarts.BasketCarts"
       }
     ],
     "beforeGameStart": [
       {
         "adapter": "kotlin",
-        "value": "turniplabs.examplemod.ExampleMod"
+        "value": "me.apollointhehouse.basketcarts.BasketCarts"
       }
 		],
     "afterGameStart": [
       {
         "adapter": "kotlin",
-        "value": "turniplabs.examplemod.ExampleMod"
+        "value": "me.apollointhehouse.basketcarts.BasketCarts"
       }
 		],
     "recipesReady": [
       {
         "adapter": "kotlin",
-        "value": "turniplabs.examplemod.ExampleMod"
+        "value": "me.apollointhehouse.basketcarts.BasketCarts"
       }
 		]
   },
   "mixins": [
-    "examplemod.mixins.json"
+		"basketcarts.mixins.json"
   ],
 
   "depends": {
@@ -52,5 +52,6 @@
     "fabric-language-kotlin": "*"
   },
   "suggests": {
-  }
+  },
+	"accessWidener" : "basketcarts.accesswidener"
 }
