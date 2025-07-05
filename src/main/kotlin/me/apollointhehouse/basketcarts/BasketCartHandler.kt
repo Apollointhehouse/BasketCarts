@@ -51,23 +51,26 @@ class BasketCartHandler {
 	fun basketCartInteract(event: CartEvent.Interact) {
 		val cart = event.cart
 		val player = event.player
+		val world = cart.world ?: return
 
-		if (cart.world?.isClientSide != false) return
-
-		if (!player.isSneaking || player.inventory.getCurrentItem() != null || player.getHeldObject() != null) {
-//					TODO("Deposit items in player inv")
-			return
-		}
+		if (world.isClientSide) return
 
 		val carried = cart.heldObject as? CarriedBlock ?: return
 		val entity = carried.entity as? TileEntityBasket ?: return
+
+		if (!player.isSneaking || player.inventory.getCurrentItem() != null || player.getHeldObject() != null) {
+			entity.givePlayerAllItems(world, player)
+			entity.unitsInside = entity.calcUnitsInside()
+			return
+		}
+
 		entity.unitsInside = entity.calcUnitsInside()
 
 		player.setHeldObject(carried)
 		carried.holder = player
 		cart.heldObject = null
 
-		cart.type = 0.toByte()
+		cart.type = PASSENGER_CART
 		cart.meta = 0
 		cart.items = arrayOfNulls(cart.containerSize)
 
