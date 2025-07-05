@@ -6,9 +6,12 @@
   "mixins": [
     "EntityMinecartAccessor",
     "EntityMinecartMixin",
-    "TileEntityBasketMixin"
+    "EntityRendererMinecartMixin",
+    "TileEntityBasketAccessor",
+    "TileEntityBasketInvoker"
   ],
   "client": [
+    "MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -26,13 +26,8 @@ val bta_version: String by project
 
 val loader_version: String by project
 
-val halplibe_version: String by project
 val mod_menu_version: String by project
 val raywire_version: String by project
-val basket_container_version: String by project
-
-//val flk_version: String by project
-//val kotlin_version: String by project
 
 group = mod_group
 base.archivesName.set(mod_name)
@@ -41,7 +36,6 @@ version = mod_version
 loom {
     noIntermediateMappings()
     customMinecraftMetadata.set("https://downloads.betterthanadventure.net/bta-client/$bta_channel/v$bta_version/manifest.json")
-    accessWidenerPath = file("src/main/resources/basketcarts.accesswidener")
 }
 
 repositories {
@@ -102,8 +96,6 @@ dependencies {
 
     // Helper library
     // If you do not need Halplibe you can comment this line out or delete this line
-    modImplementation("turniplabs:halplibe:$halplibe_version")
-//    implementation("com.github.gungun974:bta-basket-container:$basket_container_version")
     implementation("com.github.apollointhehouse:Raywire:$raywire_version")
 
     modImplementation("turniplabs:modmenu-bta:$mod_menu_version")

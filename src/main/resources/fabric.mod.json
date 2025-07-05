@@ -22,25 +22,7 @@
         "adapter": "kotlin",
         "value": "me.apollointhehouse.basketcarts.BasketCarts"
       }
-    ],
-    "beforeGameStart": [
-      {
-        "adapter": "kotlin",
-        "value": "me.apollointhehouse.basketcarts.BasketCarts"
-      }
-		],
-    "afterGameStart": [
-      {
-        "adapter": "kotlin",
-        "value": "me.apollointhehouse.basketcarts.BasketCarts"
-      }
-		],
-    "recipesReady": [
-      {
-        "adapter": "kotlin",
-        "value": "me.apollointhehouse.basketcarts.BasketCarts"
-      }
-		]
+    ]
   },
   "mixins": [
 		"basketcarts.mixins.json"
@@ -52,6 +34,5 @@
     "fabric-language-kotlin": "*"
   },
   "suggests": {
-  },
-	"accessWidener" : "basketcarts.accesswidener"
+	}
 }

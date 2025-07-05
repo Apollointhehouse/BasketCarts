@@ -3,15 +3,29 @@ package me.apollointhehouse.basketcarts.event
 import com.mojang.nbt.tags.CompoundTag
 import me.apollointhehouse.raywire.api.Cancellable
 import me.apollointhehouse.raywire.api.Event
+import net.minecraft.client.render.tessellator.Tessellator
 import net.minecraft.core.entity.player.Player
 import net.minecraft.core.entity.vehicle.EntityMinecart
 
 sealed class CartEvent(val cart: EntityMinecart) : Event {
+	sealed class Tick(cart: EntityMinecart) : CartEvent(cart) {
+		class Pre(cart: EntityMinecart) : Tick(cart)
+		class Post(cart: EntityMinecart) : Tick(cart)
+	}
+
 	class Interact(cart: EntityMinecart, val player: Player) :
 		CartEvent(cart),
 		Cancellable by Cancellable()
 
 	class Remove(cart: EntityMinecart, val player: Player) : Event
+
+	class Render(
+		val tessellator: Tessellator,
+		val x: Double, val y: Double, val z: Double,
+		val yaw: Float,
+		val delta: Float,
+		cart: EntityMinecart
+	) : CartEvent(cart)
 
 	sealed class SaveData(
 		val tag: CompoundTag,
