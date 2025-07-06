@@ -1,6 +1,6 @@
 @file:Suppress("NonJavaMixin")
 
-package me.apollointhehouse.basketcarts.mixin
+package me.apollointhehouse.basketcarts.mixin.accessors
 
 import net.minecraft.core.entity.vehicle.EntityMinecart
 import net.minecraft.core.item.ItemStack

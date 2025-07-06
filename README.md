@@ -9,7 +9,6 @@ A BTA mod that allows you to put baskets into minecarts
 - Empty minecart with basket with right-clicking
 - Put a basket into a minecart by carrying the basket block and right-clicking on the minecart
 
-
 ## Dependencies
 
 - [Raywire 1.0.4](https://github.com/Apollointhehouse/raywire)

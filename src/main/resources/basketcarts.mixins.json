@@ -4,14 +4,14 @@
   "package": "me.apollointhehouse.basketcarts.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "EntityMinecartAccessor",
-    "EntityMinecartMixin",
-    "EntityRendererMinecartMixin",
-    "TileEntityBasketAccessor",
-    "TileEntityBasketInvoker"
+    "mixins.EntityMinecartMixin",
+    "mixins.EntityRendererMinecartMixin",
+    "invokers.TileEntityBasketInvoker",
+    "accessors.EntityMinecartAccessor",
+    "accessors.TileEntityBasketAccessor"
   ],
   "client": [
-    "MinecraftMixin"
+    "mixins.MinecraftMixin"
   ],
   "injectors": {
     "defaultRequire": 1

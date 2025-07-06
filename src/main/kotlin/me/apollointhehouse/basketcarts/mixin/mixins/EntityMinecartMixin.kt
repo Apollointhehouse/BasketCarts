@@ -1,12 +1,11 @@
 @file:Suppress("NonJavaMixin")
 
-package me.apollointhehouse.basketcarts.mixin
+package me.apollointhehouse.basketcarts.mixin.mixins
 
 import com.mojang.nbt.tags.CompoundTag
 import me.apollointhehouse.basketcarts.bus
 import me.apollointhehouse.basketcarts.event.CartEvent
-import me.apollointhehouse.basketcarts.duck.Holder
-import net.minecraft.core.block.motion.CarriedBlock
+import me.apollointhehouse.basketcarts.duck.ObjectHolder
 import net.minecraft.core.entity.player.Player
 import net.minecraft.core.entity.vehicle.EntityMinecart
 import net.minecraft.core.world.ICarriable
@@ -18,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable
 
 @Suppress("KotlinConstantConditions")
 @Mixin(value = [EntityMinecart::class], remap = false)
-class EntityMinecartMixin : Holder {
+class EntityMinecartMixin : ObjectHolder {
 	@Inject(method = ["tick"], at = [At("HEAD")])
 	fun preTick(info: CallbackInfo) {
 		val event = CartEvent.Tick.Post(this as Any as EntityMinecart)

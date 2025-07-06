@@ -1,6 +1,6 @@
 @file:Suppress("NonJavaMixin")
 
-package me.apollointhehouse.basketcarts.mixin
+package me.apollointhehouse.basketcarts.mixin.mixins
 
 import me.apollointhehouse.basketcarts.bus
 import me.apollointhehouse.basketcarts.event.StartGameEvent
