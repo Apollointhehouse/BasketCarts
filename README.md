@@ -1,6 +1,7 @@
 # Basket Carts
 
 A BTA mod that allows you to put baskets into minecarts
+**Note:** Only works in singleplayer!
 
 ## Features
 
@@ -16,4 +17,4 @@ A BTA mod that allows you to put baskets into minecarts
 
 ## Usage
 
-- Place the mod and its dependencies into the mods folder for both the server and the client.
+- Place the mod and its dependencies into the mods folder.
