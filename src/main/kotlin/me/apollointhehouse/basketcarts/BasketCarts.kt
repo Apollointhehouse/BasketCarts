@@ -20,6 +20,10 @@ object BasketCarts : ModInitializer {
 
 	@EventHandler
 	fun afterGameStart(event: StartGameEvent.After) {
-		bus.subscribe(BasketCartHandler())
+		bus.subscribe(BasketCartLogic())
+		bus.subscribe(BasketCartRender())
 	}
+
+	const val BASKET_CART = 3.toByte()
+	const val PASSENGER_CART = 0.toByte()
 }
